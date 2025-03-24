@@ -73,10 +73,15 @@
             
             // Tambahkan event listener untuk ready
             player.on('ready', function() {
+                // Set fullscreen
                 player.setFullscreen(true);
+                
                 // Set volume tidak mute dan atur ke level tertentu
                 player.setMute(false);
                 player.setVolume(80); // Atur ke 80% volume
+                
+                // Otomatis play video
+                player.play(true);
             });
             
             // Tambahkan event listener untuk play
@@ -89,6 +94,27 @@
             player.on('playlistItem', function() {
                 // Pastikan tidak mute saat item playlist berubah (termasuk saat switching)
                 player.setMute(false);
+                
+                // Auto play saat ganti channel
+                player.play(true);
+            });
+            
+            // Tambahkan event listener untuk buffer
+            player.on('buffer', function() {
+                // Pastikan video tetap play setelah buffer
+                setTimeout(function() {
+                    if (player.getState() === 'buffering') {
+                        player.play(true);
+                    }
+                }, 1000);
+            });
+            
+            // Tambahkan event listener untuk error
+            player.on('error', function() {
+                // Coba play ulang jika terjadi error
+                setTimeout(function() {
+                    player.play(true);
+                }, 2000);
             });
         });
 
