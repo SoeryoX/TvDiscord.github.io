@@ -699,11 +699,11 @@ function switchTo23() {
 
 	}
 }
-//GTV
+//RTV
 function switchTo24() {
 	var playerInstance = jwplayer(); // Ensure you're referencing the correct player instance
 	playerInstance.setup({
-		file: "https://live/eds/RTV/sa_dash_vmx/RTV.mpd",
+		file: "https://dsgtq5sngxkde.cloudfront.net/live/eds/RTV/sa_dash_vmx/RTV.mpd",
 		image: "images/video.jpg",
 		type: "dash",
 		drm: {
