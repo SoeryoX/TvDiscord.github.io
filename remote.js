@@ -7,8 +7,8 @@ const os = require('os');
 // Konfigurasi yang dapat diubah
 const CONFIG = {
   PORT: process.env.PORT || 3001,
-  DISCORD_TOKEN: 'BOT_TOKEN', // Ganti dengan token Discord And
-  WEBSITE_URL: 'https://paimm13.github.io/RemoteTV.github.io/',
+  DISCORD_TOKEN: 'BOT_TOKEN', // Ganti dengan token Discord Anda
+  WEBSITE_URL: 'https://soeryox.github.io/TvDiscord.github.io/',
   PREFIX: '!tv'
 };
 
@@ -38,7 +38,7 @@ const TV_CHANNELS = [
   {
     name: 'mnctv',
     description: 'mnctv',
-    apiId: 'mntcv', // ID untuk API Tivie.id
+    apiId: 'mnctv', // ID untuk API Tivie.id
     switchCommand: 'switchTo2()',
     isLive: true
   },
@@ -79,7 +79,7 @@ const TV_CHANNELS = [
   },
   {
     name: 'mojitv',
-    description: 'mojitv',
+    description: 'moji',
     apiId: 'moji', // ID untuk API Tivie.id
     switchCommand: 'switchTo8()',
     isLive: true
@@ -94,14 +94,14 @@ const TV_CHANNELS = [
   {
     name: 'mentari',
     description: 'mentari',
-    apiId: 'mentari', // ID untuk API Tivie.id
+    apiId: 'mentaritv', // ID untuk API Tivie.id
     switchCommand: 'switchTo10()',
     isLive: true
   },
   {
     name: 'cnn',
     description: 'cnn',
-    apiId: 'cnn', // ID untuk API Tivie.id
+    apiId: 'cnnindonesia', // ID untuk API Tivie.id
     switchCommand: 'switchTo11()',
     isLive: true
   },
@@ -127,22 +127,22 @@ const TV_CHANNELS = [
     isLive: true
   },
   {
-    name: 'Hbo asia',
-    description: 'habo asia',
-    apiId: 'hboasia', // ID untuk API Tivie.id
+    name: 'hbo',
+    description: 'hboasia',
+    apiId: 'hbo', // ID untuk API Tivie.id
     switchCommand: 'switchTo15()',
     isLive: true
   },{
-    name: 'hbo hits',
-    description: 'hbo hits',
-    apiId: 'hbo hits', // ID untuk API Tivie.id
+    name: 'hbohits',
+    description: 'hbohits',
+    apiId: 'hbohits', // ID untuk API Tivie.id
     switchCommand: 'switchTo16()',
     isLive: true
   },
   {
-    name: 'hbo family',
-    description: 'habo family',
-    apiId: 'hbo family', // ID untuk API Tivie.id
+    name: 'hbofamily',
+    description: 'habofamily',
+    apiId: 'hbofamily', // ID untuk API Tivie.id
     switchCommand: 'switchTo17()',
     isLive: true
   },
@@ -161,28 +161,28 @@ const TV_CHANNELS = [
     isLive: true
   },
   {
-    name: 'bein 1',
+    name: 'bein1',
     description: 'bein 1',
-    apiId: 'bein1', // ID untuk API Tivie.id
+    apiId: 'beinsports1', // ID untuk API Tivie.id
     switchCommand: 'switchTo20()',
     isLive: true
   },
   {
-    name: 'bein 2',
+    name: 'bein2',
     description: 'bein 2',
-    apiId: 'bein 2', // ID untuk API Tivie.id
+    apiId: 'beinsports2', // ID untuk API Tivie.id
     switchCommand: 'switchTo21()',
     isLive: true
   },
   {
-    name: 'bein 3',
+    name: 'bein3',
     description: 'bein 3',
-    apiId: 'bein 3', // ID untuk API Tivie.id
+    apiId: 'beinsports3', // ID untuk API Tivie.id
     switchCommand: 'switchTo22()',
     isLive: true
   },
   {
-    name: 'tvn movies',
+    name: 'tvnmovies',
     description: '',
     apiId: 'tvnmovies', // ID untuk API Tivie.id
     switchCommand: 'switchTo23()',
