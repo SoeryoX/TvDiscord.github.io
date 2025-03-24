@@ -70,8 +70,25 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             let player = jwplayer("jwplayerDiv");
+            
+            // Tambahkan event listener untuk ready
             player.on('ready', function() {
                 player.setFullscreen(true);
+                // Set volume tidak mute dan atur ke level tertentu
+                player.setMute(false);
+                player.setVolume(80); // Atur ke 80% volume
+            });
+            
+            // Tambahkan event listener untuk play
+            player.on('play', function() {
+                // Pastikan tidak mute saat mulai playing
+                player.setMute(false);
+            });
+            
+            // Tambahkan event listener untuk playlist
+            player.on('playlistItem', function() {
+                // Pastikan tidak mute saat item playlist berubah (termasuk saat switching)
+                player.setMute(false);
             });
         });
 
