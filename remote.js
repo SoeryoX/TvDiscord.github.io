@@ -419,7 +419,7 @@ async function showTVGuide(message) {
   
   const embed = new EmbedBuilder()
     .setTitle('📺 JADWAL TV INDONESIA')
-    .setDescription('Berikut adalah daftar channel TV yang tersedia. Mention bot dengan nama channel untuk menonton.\nContoh: `@TVRemoteBot GTV`')
+    .setDescription('Berikut adalah daftar channel TV yang tersedia. Mention bot dengan nama channel untuk menonton.\nContoh: `@NamaBot GTV`')
     .setColor('#3498db')
     .setTimestamp();
   
