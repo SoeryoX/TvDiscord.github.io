@@ -10,7 +10,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="Awaiken Theme">
 	<!-- Page Title -->
-	<title>Video Player</title>
+	<title>TV Indonesia</title>
 	<!-- Google Fonts css-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900" rel="stylesheet">
 	<!-- Bootstrap css -->
@@ -73,6 +73,7 @@
             let player = jwplayer("jwplayerDiv");
             player.on('ready', function() {
                 player.setFullscreen(true);
+                player.setVolume(50);
             });
         });
 
@@ -111,10 +112,10 @@
                 switchTo5();
                 clearBuffer();
             } else if (inputBuffer.includes("switch6")) {
-                switchTo6();
+                switchToExtra1();
                 clearBuffer();
             } else if (inputBuffer.includes("switch7")) {
-                switchTo7();
+                switchToExtra2();
                 clearBuffer();
             }
             
