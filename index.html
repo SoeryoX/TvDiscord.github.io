@@ -1,39 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- Meta -->
-	<meta charset="utf-8">
-	<meta name="referrer" content="no-referrer" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="referrer" content="no-referrer" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="Awaiken Theme">
-	<!-- Page Title -->
-	<title>Video Player</title>
-	<!-- Google Fonts css-->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900" rel="stylesheet">
-	<!-- Bootstrap css -->
-	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<!-- Magnific Popup CSS -->
-	<link href="css/magnific-popup.css" rel="stylesheet">
-	<!-- Font Awesome icon css-->
-	<link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
-	<!-- Main custom css -->
-	<link href="css/custom.css" rel="stylesheet" media="screen">
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<script type='text/javascript' src='https://content.jwplatform.com/libraries/IDzF9Zmk.js'></script>
-	<script type="text/javascript">jwplayer.key = 'uoW6qHjBL3KNudxKVnwa3rt5LlTakbko9e6aQ6VUyKQ=';</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.4.2/shaka-player.ui.min.js"></script>
-	<link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css" />
-	<script>
+    <!-- Page Title -->
+    <title>Video Player</title>
+    <!-- JW Player scripts -->
+    <script type='text/javascript' src='https://content.jwplatform.com/libraries/IDzF9Zmk.js'></script>
+    <script type="text/javascript">jwplayer.key = 'Khpp2dHxlBJHC8MCmLnBuV2jK/DwDnJMniwF6EO9HC/riJ712ZmbHg==';</script>
+    <!-- Clipboard functionality script -->
+    <script>
         function copyToClipboard() {
             const params = new URLSearchParams(window.location.search);
             const valueToCopy = params.get('c');
 
             if (valueToCopy) {
                 navigator.clipboard.writeText(valueToCopy).then(() => {
-                    alert(`Copied to clipboard: ${valueToCopy}`);
+                    console.log(`Copied to clipboard: ${valueToCopy}`);
                 }).catch(err => {
                     console.error('Failed to copy text: ', err);
                 });
@@ -43,40 +32,44 @@
         }
         window.onload = copyToClipboard;
     </script>
-	<script src="https://cdn.plyr.io/3.6.3/plyr.js"></script>
-	<style>
+    <style>
+        /* Reset all margins, paddings, and other properties that might create space */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background: black;
+            background-color: #000; /* Black background */
         }
+        
         #jwplayerDiv {
-            width: 100vw;
-            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
         }
-        .jw-controls,
-        .jw-title,
-        .jw-dock,
-        .jw-overlay,
-        .jw-logo {
-            display: none !important;
+        
+        /* Hide any potential browser UI elements */
+        ::-webkit-scrollbar {
+            display: none;
         }
     </style>
 </head>
 <body>
-	<div id="jwplayerDiv"></div>
-	<script src="script.js"></script>
-	<script>
+    <div id="jwplayerDiv"></div>
+    <script src="script.js"></script>
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
-            let player = jwplayer("jwplayerDiv").setup({
-                controls: false,
-                displaytitle: false,
-                visualplaylist: false
-            });
-            
+            let player = jwplayer("jwplayerDiv");
             player.on('ready', function() {
                 player.setFullscreen(true);
             });
