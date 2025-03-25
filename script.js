@@ -718,7 +718,26 @@ function switchTo24() {
 		playerInstance.setFullscreen(true);
 	});
 }
+//rcti plus
+function switchTo24() {
+	var playerInstance = jwplayer(); // Ensure you're referencing the correct player instance
+	playerInstance.setup({
+		file: "https://cempedak-live-cdn.mncnow.id/live/eds/RCTI-DD/sa_dash_vmx/RCTI-DD.mpd",
+		image: "images/video.jpg",
+		type: "dash",
+		drm: {
+			widevine: {
+				url: "https://mrpw.ptmnc01.verspective.net/?deviceId=MDA5MmI1NjctOWMyMS0zNDYyLTk0NDAtODM5NGQ1ZjdlZWRi",
+			},
+		},
+		autostart: true,
+	});
 
+	playerInstance.on("play", function () {
+		playerInstance.setFullscreen(true);
+	});
+}
+//swith to yt
 function switchToYT(videoID) {
 	console.log("Switching to YouTube video ID:", videoID);
 	// Exit fullscreen if active before switching
