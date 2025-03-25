@@ -719,7 +719,7 @@ function switchTo24() {
 	});
 }
 //rcti plus
-function switchTo24() {
+function switchTo25() {
 	var playerInstance = jwplayer(); // Ensure you're referencing the correct player instance
 	playerInstance.setup({
 		file: "https://cempedak-live-cdn.mncnow.id/live/eds/RCTI-DD/sa_dash_vmx/RCTI-DD.mpd",
